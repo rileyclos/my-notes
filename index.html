@@ -1,0 +1,155 @@
+<script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    span.hover {
+        text-decoration: underline;
+        color: blue;
+    }
+    span.hover:hover {
+        font-style: italic;
+        color: red;
+    }
+    label {
+        max-width: 300px;
+        display: none;
+        background: #ffd;
+        border: 1px solid #dda;
+        border-radius: 7px;
+        padding: 5px;
+    }
+    #navigation {
+        width: 100%;
+        min-height: 100%;
+        display: block;
+        background: #ddf;
+    }
+    .jumpnav {
+        position: fixed;
+        padding: 10px 20px;
+        top: 10px;
+        right: 10px;
+    }
+    .pdf {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        position: fixed;
+        left: 10px;
+        top: 10px;
+    }
+    .pdf-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+    .vision { display: block !important }
+    .non-vision { display: none }
+</style>
+<div id="navigation">Navigation<br>
+    <ul>
+        <li><a href="#benton-3-8-23">Benton:3/8/23</a></li>
+        <li><button onclick="show('#fls_21_tut')">FL Studio 21 guide</button></li>
+    </ul>
+</div>
+<div class="jumpnav">Navigation</div>
+    <hr>
+    <h1 id="benton-3-8-23">Benton notes - 8 March 2023</h1>
+    <p><br>
+        <h3><u>Middle English</u></h3>
+        Many large events during this time period - <u>chaotic</u><br>
+        Ended in 1500 mainly after the introduction of the printing press, which was introduced in 1470 to London.
+            <ul>
+                <li>Chancery Style Dialect</li>
+            </ul>
+        <table>
+            <tr>
+                <td>
+                    <u>Medeival Themes</u>
+                    <ul>
+                        <li>Courtly Love</li>
+                        <li>Chivalry</li>
+                        <li>Devotion to God</li>
+                        <li>Virtues and Sins</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br></p>
+        <p>
+        <h3><u>Early Modern English and the Elizabethian Era</u></h3>
+        <table>
+            <tr>
+                <td>
+                    <u>Themes</u>
+                    <ul>
+                        <li>Revenge</li>
+                        <li>Sensationalism</li>
+                        <li>Melodrama</li>
+                        <li>the Human Condition</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li>Queen Elizabeth - 1558</li>
+            <li>King James <u>massively</u> changed english</li>
+            <li>Less grammar rules at this time</li>
+            <li>Uses weird words -- they had much more broad meanings than they do today</li>
+            <li>"Spelling was a loose concept"</li>
+            <li>Informal Singular: thou/thee/thy/thine/thyself<br>
+                Formal or Plural: you, ye, your, yours, yourself
+            </li>
+            <li>William Shakespeare</li>
+            <ul>
+                <li>Wrote a <u>lot</u></li>
+                <li>Versatile</li>
+                <li>Born in 1568</li>
+                <li>Didn't get too much formal education (up to 6th/7th grade)</li>
+                <li>His wife was <span class="hover" id="hov1">8 years older than him</span><label id="forhov1">Women who werent married at this age were looked down upon as "scandalous"</label></li>
+                <ul>
+                    <li>Named Anne Hathaway</li>
+                </ul>
+                <li>Shakespeare left his family in 1590 and moved to London to become an actor and playwright</li>
+                <li>King James took him and his troop in</li>
+                <ul>
+                    <li>Banquo is King James's ancestor</li>
+                    <ul>
+                        <li>Wasn't a good person in real life</li>
+                        <li><b>Was</b> a good person in <i>Macbeth</i></li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </p>
+    <img src="macbeth_card.jpg" alt="macbeth trading card" style="
+        position: absolute;
+        width: 240px;
+        top: calc(500px + 100vh); 
+        transform: rotate(10deg);
+        right: 400px;   
+    ">
+    <hr>
+    <div class="pdf non-vision" id="fls_21_tut">
+        <button class="pdf-close">X</button>
+        <embed src="fls_21_tut.pdf" type="application/pdf" width="100%" height="100%">
+    </div>
+<script>
+    $('.hover').on('mouseover', function(){
+        $(`#for${$(this).attr('id')}`).css('display', 'block');
+    })
+    $('.hover').on('mouseout', function(){
+        $(`#for${$(this).attr('id')}`).css('display', 'none');
+    })
+    $('.pdf-close').on('click', function(){
+        $(this).parent().removeClass('vision');
+    })
+    function show(elem) {
+        $('.pdf').removeClass('vision')
+        $(elem).addClass('vision')
+    }
+</script>
